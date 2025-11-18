@@ -1,0 +1,796 @@
+{
+  "patient_id": "69199aa9c070ec7ca6652203",
+  "medical_analysis": {
+    "patient_info": {
+      "name": "Sourav Chowdhury",
+      "age": 25,
+      "gender": "Male",
+      "occupation": "Engineer",
+      "occupation_activity_classification": "Sedentary",
+      "address": {
+        "area": "",
+        "locality": "",
+        "city": "Dhaka",
+        "state": "Bangladesh"
+      },
+      "contact": "+8801712906519",
+      "dietary_preference": "Vegetarian",
+      "allergies": [
+        "fish"
+      ],
+      "presenting_complaints": "Routine check-up, current smoker, diabetes mellitus not on treatment"
+    },
+    "vital_signs": {
+      "blood_pressure": {
+        "systolic": 120,
+        "diastolic": 80,
+        "unit": "mmHg"
+      },
+      "heart_rate": {
+        "value": 78,
+        "unit": "bpm"
+      },
+      "respiratory_rate": {
+        "value": 16,
+        "unit": "breaths/min"
+      },
+      "spo2": {
+        "value": 98,
+        "unit": "%"
+      },
+      "temperature": {
+        "value": 36.8,
+        "unit": "°C"
+      }
+    },
+    "anthropometric_measurements": {
+      "height": {
+        "value": 170,
+        "unit": "cm"
+      },
+      "weight": {
+        "value": 68,
+        "unit": "kg"
+      },
+      "bmi": {
+        "value": 23.5,
+        "who_classification": "Normal",
+        "indian_rssdi_classification": "Overweight",
+        "interpretation": "BMI is within normal range according to WHO, but classified as overweight by Indian RSSDI guidelines."
+      }
+    },
+    "examination_findings": {
+      "general_appearance": "Well-nourished, alert, no acute distress",
+      "cardiovascular": "Normal heart sounds, no murmurs",
+      "respiratory": "Clear breath sounds bilaterally",
+      "abdominal": "Soft, non-tender, no organomegaly",
+      "neurological": "No focal neurological deficits",
+      "musculoskeletal": {
+        "joint_issues": [],
+        "previous_fractures": [],
+        "mobility_limitations": [],
+        "deformities": []
+      },
+      "lower_limb_vascular_assessment": {
+        "pulse_grading_svs": {
+          "femoral": {
+            "left": "2+",
+            "right": "2+",
+            "notes": "Normal pulses"
+          },
+          "popliteal": {
+            "left": "2+",
+            "right": "2+",
+            "notes": "Normal pulses"
+          },
+          "anterior_tibial": {
+            "left": "2+",
+            "right": "2+",
+            "notes": "Normal pulses"
+          },
+          "posterior_tibial": {
+            "left": "2+",
+            "right": "2+",
+            "notes": "Normal pulses"
+          },
+          "dorsalis_pedis": {
+            "left": "2+",
+            "right": "2+",
+            "notes": "Normal pulses"
+          }
+        },
+        "arterial_findings": {
+          "intermittent_claudication": false,
+          "claudication_distance_meters": 0,
+          "rest_pain": false,
+          "skin_changes": [],
+          "rutherford_classification": "Class 0: Asymptomatic"
+        },
+        "venous_findings": {
+          "varicose_veins": false,
+          "edema": "None",
+          "skin_changes": []
+        },
+        "lymphatic_findings": {
+          "lymphedema": false,
+          "severity": "Mild"
+        },
+        "diabetic_foot_assessment": {
+          "neuropathy": false,
+          "ulcers": [],
+          "deformities": [],
+          "infection_signs": false
+        },
+        "ulcer_documentation": {
+          "present": false,
+          "details": []
+        },
+        "skin_assessment": {
+          "color": "normal",
+          "temperature": "warm",
+          "hair_growth": "normal",
+          "nail_changes": []
+        }
+      },
+      "other_findings": "No significant abnormalities"
+    },
+    "laboratory_results": {
+      "_note": "DYNAMIC SECTION - Include ONLY lab categories found in actual reports",
+      "_instructions": "Create subsections for each lab test category identified (e.g., complete_blood_count, liver_function_tests, renal_function_tests, lipid_profile, thyroid_function, hba1c, electrolytes, etc.)",
+      "lab_categories_identified": [
+        "Clinical Biochemistry",
+        "Serum Electrolytes",
+        "Renal Function Test",
+        "Hematology",
+        "Serology"
+      ],
+      "clinical_biochemistry": {
+        "serum_random_blood_sugar": {
+          "value": 134,
+          "unit": "mg/dL",
+          "reference_range": "70 - 140 mg/dL",
+          "status": "normal"
+        }
+      },
+      "serum_electrolytes": {
+        "serum_sodium": {
+          "value": 142,
+          "unit": "mmol/L",
+          "reference_range": "136 - 145 mmol/L",
+          "status": "normal"
+        },
+        "serum_potassium": {
+          "value": 3.8,
+          "unit": "mmol/L",
+          "reference_range": "3.50 - 5.30 mmol/L",
+          "status": "normal"
+        },
+        "serum_chloride": {
+          "value": 110,
+          "unit": "mmol/L",
+          "reference_range": "98 - 107 mmol/L",
+          "status": "high"
+        }
+      },
+      "renal_function_test": {
+        "blood_urea_nitrogen": {
+          "value": 7,
+          "unit": "mg/dL",
+          "reference_range": "6 - 20 mg/dL",
+          "status": "normal"
+        },
+        "serum_creatinine": {
+          "value": 1.04,
+          "unit": "mg/dL",
+          "reference_range": "0.62 - 1.10 mg/dL",
+          "status": "normal"
+        },
+        "serum_uric_acid": {
+          "value": 6.6,
+          "unit": "mg/dL",
+          "reference_range": "3.50 - 7.21 mg/dL",
+          "status": "normal"
+        }
+      },
+      "hematology": {
+        "haemoglobin": {
+          "value": 14.7,
+          "unit": "g/dL",
+          "reference_range": "13 - 17 g/dL",
+          "status": "normal"
+        },
+        "total_leucocytes_count": {
+          "value": 10130,
+          "unit": "cells/cumm",
+          "reference_range": "4000 - 11000 cells/cumm",
+          "status": "normal"
+        },
+        "neutrophils": {
+          "value": 55.2,
+          "unit": "%",
+          "reference_range": "40 - 80 %",
+          "status": "normal"
+        },
+        "lymphocytes": {
+          "value": 30.3,
+          "unit": "%",
+          "reference_range": "20 - 40 %",
+          "status": "normal"
+        },
+        "eosinophils": {
+          "value": 1.4,
+          "unit": "%",
+          "reference_range": "1 - 6 %",
+          "status": "normal"
+        },
+        "monocytes": {
+          "value": 12.5,
+          "unit": "%",
+          "reference_range": "2 - 10 %",
+          "status": "high"
+        },
+        "basophils": {
+          "value": 0.6,
+          "unit": "%",
+          "reference_range": "0 - 1 %",
+          "status": "normal"
+        },
+        "erythrocyte_sedimentation_rate": {
+          "value": 15,
+          "unit": "mm/1st hr",
+          "reference_range": "0 - 9 mm/1st hr",
+          "status": "high"
+        },
+        "red_blood_cell_count": {
+          "value": 4.93,
+          "unit": "million/cumm",
+          "reference_range": "4.5 - 5.5 million/cumm",
+          "status": "normal"
+        },
+        "packed_cell_volume": {
+          "value": 43.9,
+          "unit": "%",
+          "reference_range": "40 - 50 %",
+          "status": "normal"
+        },
+        "platelet_count": {
+          "value": 2.27,
+          "unit": "lakhs/cumm",
+          "reference_range": "1.5 - 4.0 lakhs/cumm",
+          "status": "normal"
+        },
+        "platelet_distribution_width": {
+          "value": 11.5,
+          "unit": "%",
+          "reference_range": "8.2 - 9.8 %",
+          "status": "high"
+        },
+        "mean_platelet_volume": {
+          "value": 10.4,
+          "unit": "fL",
+          "reference_range": "9.2 - 10.4 fL",
+          "status": "normal"
+        },
+        "prothrombin_time": {
+          "value": 13.7,
+          "unit": "Sec",
+          "reference_range": "12.06 - 16.06 Sec",
+          "status": "normal"
+        },
+        "pt_inr": {
+          "value": 0.97,
+          "reference_range": "0.8 - 1.2",
+          "status": "normal"
+        },
+        "aptt": {
+          "value": 27.6,
+          "unit": "SECS",
+          "reference_range": "26.80 - 30.80 SECS",
+          "status": "normal"
+        }
+      },
+      "serology": {
+        "hiv_i_ii_antibodies": {
+          "result": "NON REACTIVE",
+          "interpretation": "< 0.9 is NON REACTIVE"
+        },
+        "hepatitis_b_surface_antigen": {
+          "result": "NON REACTIVE",
+          "interpretation": "<= 0.9 is NON REACTIVE"
+        },
+        "hbeag": {
+          "result": "Not Detected"
+        },
+        "anti_hcv_antibodies": {
+          "result": "NON REACTIVE",
+          "interpretation": "< 0.9 is NON REACTIVE"
+        },
+        "hcv_rna": {
+          "result": "No Exposure to Hepatitis C Virus (HCV)"
+        }
+      },
+      "abnormal_findings_summary": [
+        "Serum Chloride: 110 mmol/L (High)",
+        "Monocytes: 12.5% (High)",
+        "Erythrocyte Sedimentation Rate: 15 mm/1st hr (High)",
+        "Platelet Distribution Width: 11.5% (High)"
+      ],
+      "critical_values": []
+    },
+    "medical_history_comorbidities": {
+      "diabetes": {
+        "present": true,
+        "type": "Type 2",
+        "duration_years": 1,
+        "controlled": false,
+        "medications": [],
+        "last_hba1c": {
+          "value": null,
+          "date": null
+        },
+        "last_fbs_rbs": {
+          "fbs": null,
+          "rbs": 134,
+          "unit": "mg/dL"
+        },
+        "complications": []
+      },
+      "hypertension": {
+        "present": false,
+        "duration_years": null,
+        "controlled": false,
+        "medications": [],
+        "complications": []
+      },
+      "dyslipidemia": {
+        "present": false,
+        "controlled": false,
+        "medications": []
+      },
+      "cardiovascular_disease": {
+        "ihd": false,
+        "cad": false,
+        "type": "",
+        "complications": []
+      },
+      "thyroid_disorders": {
+        "hypothyroidism": {
+          "present": false,
+          "medications": []
+        },
+        "hyperthyroidism": {
+          "present": false,
+          "medications": []
+        }
+      },
+      "other_conditions": []
+    },
+    "substance_use_history": {
+      "smoking": {
+        "status": "Current",
+        "type": "Cigarette",
+        "quantity_per_day": null,
+        "duration_years": 7,
+        "pack_years": null,
+        "smoking_index": null,
+        "risk_category": "Moderate",
+        "abstinence_months": 0
+      },
+      "tobacco_chewing": {
+        "status": false,
+        "quids_per_day": 0,
+        "duration_years": 0,
+        "chewing_index": 0,
+        "risk_category": "Low"
+      },
+      "betel_nut": {
+        "status": false,
+        "quids_per_day": 0,
+        "duration_years": 0,
+        "chewing_index": 0,
+        "risk_category": "Low"
+      },
+      "alcohol": {
+        "status": "Never",
+        "details": "No history of alcohol use"
+      },
+      "total_tobacco_risk": "Moderate due to current smoking status"
+    },
+    "lifestyle_assessment": {
+      "occupation_activity": {
+        "occupation": "Engineer",
+        "classification": "Sedentary",
+        "rationale": "Office-based work with minimal physical activity"
+      },
+      "physical_activity": {
+        "daily_steps": {
+          "value": 3000,
+          "distance_km": 2.34,
+          "classification": "Below recommendations"
+        },
+        "exercise_frequency": "Rarely exercises",
+        "exercise_type": []
+      },
+      "sleep": {
+        "duration_hours": 7,
+        "quality": "Good",
+        "disturbances": [],
+        "classification": "Adequate for age",
+        "recommendations": "Maintain current sleep pattern"
+      },
+      "diet_habits": {
+        "type": "Vegetarian",
+        "meal_frequency": 3,
+        "water_intake_liters": 2.5,
+        "concerns": [
+          "Fish allergy"
+        ]
+      }
+    },
+    "risk_stratification": {
+      "components": [
+        {
+          "category": "METABOLIC",
+          "risk_level": "Moderate",
+          "findings": [
+            "Type 2 Diabetes Mellitus, not on treatment"
+          ],
+          "rationale": "Uncontrolled diabetes increases risk for metabolic complications"
+        },
+        {
+          "category": "TOBACCO",
+          "risk_level": "Moderate",
+          "findings": [
+            "Current smoker"
+          ],
+          "rationale": "Smoking increases cardiovascular and respiratory risk"
+        }
+      ],
+      "overall_risk_assessment": "Moderate risk due to uncontrolled diabetes and smoking"
+    },
+    "key_calculations": {
+      "bmi": {
+        "value": 23.5,
+        "who": "Normal",
+        "indian": "Overweight"
+      },
+      "bmr_mifflin_st_jeor": {
+        "value": 1653.5,
+        "unit": "kcal/day"
+      },
+      "tdee": {
+        "sedentary": 1984.2,
+        "current_activity_level": 1984.2,
+        "activity_level_used": "Sedentary"
+      },
+      "calorie_deficit_needed": {
+        "current_bmi_category": "Normal",
+        "target_daily_calories": 1484.2,
+        "deficit_amount": 500,
+        "expected_weight_loss": "0.5-1 kg/week"
+      },
+      "total_tobacco_risk": "Moderate",
+      "cardiovascular_risk_score": null
+    },
+    "individualized_diet_plan": {
+      "target_calories": 1484,
+      "calorie_goal": 1484,
+      "unit": "kcal/day",
+      "type": "Vegetarian",
+      "macronutrient_distribution": {
+        "protein": {
+          "grams": 74,
+          "range_gkg": "1.2-2.0",
+          "percentage": "20%"
+        },
+        "carbohydrates": {
+          "grams": 223,
+          "percentage": "60%"
+        },
+        "fat": {
+          "grams": 33,
+          "percentage": "20%"
+        }
+      },
+      "fluid_intake": {
+        "target_liters": 2.5,
+        "schedule": "Distribute evenly throughout the day"
+      },
+      "meals": [
+        {
+          "meal_name": "Breakfast",
+          "time": "7:00 AM",
+          "foods": "Oats porridge 30g, 1 cup skim milk, 8 almonds, 2 walnuts, 1 apple",
+          "calories": 350,
+          "protein": "15g",
+          "carbs": "55g",
+          "fat": "10g"
+        },
+        {
+          "meal_name": "Mid-morning",
+          "time": "10:00 AM",
+          "foods": "1 banana, 1 cup green tea",
+          "calories": 150,
+          "protein": "2g",
+          "carbs": "35g",
+          "fat": "0g"
+        },
+        {
+          "meal_name": "Lunch",
+          "time": "1:00 PM",
+          "foods": "2 chapatis, 1 cup dal, 1 cup mixed vegetable curry, salad",
+          "calories": 400,
+          "protein": "20g",
+          "carbs": "60g",
+          "fat": "10g"
+        },
+        {
+          "meal_name": "Evening Snack",
+          "time": "4:00 PM",
+          "foods": "1 cup yogurt, 1 handful of mixed nuts",
+          "calories": 200,
+          "protein": "10g",
+          "carbs": "20g",
+          "fat": "10g"
+        },
+        {
+          "meal_name": "Dinner",
+          "time": "7:00 PM",
+          "foods": "1 cup brown rice, 1 cup vegetable stew, 1 cup lentil soup",
+          "calories": 384,
+          "protein": "27g",
+          "carbs": "53g",
+          "fat": "3g"
+        }
+      ],
+      "daily_totals": {
+        "calories": 1484,
+        "protein": "74g",
+        "carbs": "223g",
+        "fat": "33g"
+      },
+      "notes": [
+        "Adjust portion sizes to reach calorie goal of 1484 kcal/day",
+        "Consider patient allergies: fish",
+        "Based on vegetarian preference",
+        "All meals split every 3-4 hours",
+        "Local dietary habits incorporated"
+      ],
+      "weekly_variation": "Rotate proteins, vary vegetables, alternate grains for variety"
+    },
+    "exercise_physiotherapy_plan": {
+      "considerations": {
+        "mobility_limitations": [],
+        "joint_issues": [],
+        "previous_fractures": [],
+        "contraindications": [],
+        "current_fitness_level": "Sedentary"
+      },
+      "recommended_program": [
+        {
+          "activity_type": "Walking Program",
+          "description": "Start 15-20 minutes daily, gradually increase to 30-45 minutes",
+          "frequency": "5-7 days/week",
+          "intensity": "Moderate pace",
+          "duration": "15-45 minutes",
+          "progression": "Increase by 5 minutes weekly",
+          "modifications": "If claudication occurs, rest until pain subsides, then continue"
+        },
+        {
+          "activity_type": "Interval Training",
+          "description": "Alternate walking speeds if tolerated",
+          "frequency": "3 times/week",
+          "modifications": "Based on symptoms"
+        },
+        {
+          "activity_type": "Resistance Training",
+          "description": "Light weights or body weight exercises",
+          "exercises": [
+            "Wall push-ups",
+            "Chair squats",
+            "Seated leg raises"
+          ],
+          "frequency": "2-3 times/week",
+          "modifications": "Avoid if severe joint pain"
+        },
+        {
+          "activity_type": "Flexibility & Balance",
+          "description": "Gentle stretching and balance exercises",
+          "exercises": [
+            "Ankle circles",
+            "Calf stretches",
+            "Standing balance"
+          ],
+          "frequency": "Daily",
+          "duration": "10-15 minutes"
+        }
+      ],
+      "warm_up": "5 minutes gentle stretching/breathing",
+      "cool_down": "5 minutes gentle stretching",
+      "hydration": "200-300ml water before/after session",
+      "sleep_hygiene": "Prioritize 7-8 hours nightly, optimize sleep environment",
+      "target_distance": "Progressive increase, monitor symptoms",
+      "safety_precautions": [
+        "Stop if severe pain, dizziness, or chest discomfort",
+        "Wear proper footwear",
+        "Exercise in safe, well-lit areas",
+        "Monitor blood sugar if diabetic"
+      ]
+    },
+    "management_advice_triggers": {
+      "diabetes": {
+        "status": "Uncontrolled",
+        "action": "Immediate endocrinology referral/start treatment"
+      },
+      "hypertension": {
+        "status": "Not present",
+        "action": "Monitor blood pressure regularly"
+      },
+      "foot_care": {
+        "status": "Normal",
+        "action": "NO home cutting of nails/calluses, no heat pads, daily inspection required"
+      },
+      "tobacco_cessation": {
+        "status": "Active use",
+        "action": "Increased vascular risk counseling, cessation support, de-addiction clinic referral"
+      },
+      "medication_adherence": {
+        "status": "Not applicable",
+        "action": "Review all comorbidity medications, ensure regular follow-up"
+      },
+      "wound_care": {
+        "present": false,
+        "action": "Specific care: moisture, moisturization, proper footwear"
+      },
+      "lifestyle_modifications": [
+        "Graded walking program as tolerated",
+        "Immediate specialty review (see referrals)",
+        "Strict foot care protocol and self-monitoring"
+      ],
+      "additional_advice": "All risk/plan details included above, follow international guidelines"
+    },
+    "red_flags_emergency_return": {
+      "seek_immediate_medical_attention_if": [
+        "Sudden severe chest pain or pressure",
+        "Difficulty breathing or shortness of breath at rest",
+        "Sudden weakness, numbness, or loss of sensation",
+        "Rapidly spreading wound infection (increasing redness, warmth, pus)",
+        "Uncontrolled bleeding from wound",
+        "Signs of gangrene (blackened or cold tissue)",
+        "High fever (>101°F) with chills or confusion",
+        "Severe rest pain not relieved by position changes",
+        "Sudden color change in limb (pale, blue, or mottled)",
+        "Loss of consciousness or severe dizziness",
+        "New or worsening claudication significantly limiting walking"
+      ]
+    },
+    "follow_up_plan": {
+      "next_appointment": "1 month",
+      "specialty_clinic_referrals": [
+        {
+          "clinic": "Endocrinology",
+          "reason": "Uncontrolled diabetes, medication initiation/adjustment",
+          "urgency": "Immediate"
+        },
+        {
+          "clinic": "Dietitian/Nutritionist",
+          "reason": "Personalized meal planning, comorbidity management, weight optimization",
+          "urgency": "Routine"
+        },
+        {
+          "clinic": "De-addiction/Psychiatry",
+          "reason": "Smoking/tobacco cessation support, substance use counseling",
+          "urgency": "Routine"
+        }
+      ],
+      "investigations_required": [
+        {
+          "test": "HbA1c",
+          "timing": "Every 3 months",
+          "indication": "Diabetes monitoring"
+        },
+        {
+          "test": "Lipid profile",
+          "timing": "Every 6 months",
+          "indication": "CVD risk"
+        },
+        {
+          "test": "ABI (Ankle-Brachial Index)",
+          "timing": "If not done or symptoms worsen",
+          "indication": "PAD assessment"
+        },
+        {
+          "test": "Doppler ultrasound",
+          "timing": "As per vascular specialist",
+          "indication": "Arterial assessment"
+        }
+      ],
+      "medication_review": "Review all comorbidity medications, ensure adherence, adjust as per specialist recommendations",
+      "self_monitoring": [
+        "Daily foot inspection",
+        "Blood pressure monitoring if hypertensive",
+        "Blood glucose monitoring if diabetic",
+        "Weight tracking weekly",
+        "Exercise log maintenance"
+      ]
+    },
+    "integrated_report_summary": {
+      "patient": {
+        "demographics": "Age 25, Male, Engineer",
+        "dietary_preference": "Vegetarian"
+      },
+      "main_problems": "Uncontrolled diabetes, current smoker",
+      "critical_findings": null,
+      "care_plan_summary": [
+        "Graded walking program as tolerated",
+        "Immediate specialty review (endocrinology, dietitian, de-addiction)",
+        "Tailored diet: ~1484 kcal/day, Vegetarian",
+        "Strict foot care protocol and self-monitoring",
+        "Red flag education provided",
+        "Tobacco cessation counseling and support"
+      ],
+      "advice": "All risk stratifications per ADA, ESC, EASO, WHO, ICMR, MoHFW, and international vascular guidelines. All risk/plan details included above.",
+      "advisor": "AI Medical Assistant",
+      "supervising_physician": "Report to be reviewed and co-signed by attending physician",
+      "data_quality_assessment": "Complete data available, OCR extraction quality assessment"
+    },
+    "referrals_suggested": [
+      {
+        "specialty": "Endocrinology",
+        "reason": "Uncontrolled diabetes, medication initiation/adjustment required",
+        "urgency": "Immediate"
+      },
+      {
+        "specialty": "Dietitian/Nutritionist",
+        "reason": "Personalized meal planning, comorbidity management, weight optimization",
+        "urgency": "Routine"
+      },
+      {
+        "specialty": "De-addiction Clinic/Psychiatry",
+        "reason": "Smoking/tobacco cessation support, substance use counseling",
+        "urgency": "Routine"
+      }
+    ],
+    "additional_recommendations": [
+      "Regular physical activity as per exercise plan",
+      "Stress management techniques",
+      "Support group participation for chronic disease management",
+      "Family education regarding emergency signs",
+      "Regular follow-up adherence critical for outcomes"
+    ],
+    "report_metadata": {
+      "generation_timestamp": "2025-11-16T09:44:07.403Z",
+      "files_analyzed": [
+        "https://res.cloudinary.com/drgya5yez/image/authenticated/s--9SxkEIMF--/v1763285680/patients/reports/Lab-1-1763285671939-p151ji4.pdf",
+        "https://res.cloudinary.com/drgya5yez/image/authenticated/s--R0aIPoip--/v1763285681/patients/reports/Lab-2-1763285672950-90yggvb.pdf"
+      ],
+      "extraction_methods": [
+        "OCR",
+        "PDF text extraction"
+      ],
+      "lab_categories_present": [
+        "Clinical Biochemistry",
+        "Serum Electrolytes",
+        "Renal Function Test",
+        "Hematology",
+        "Serology"
+      ],
+      "calculations_performed": [
+        "BMI",
+        "BMR",
+        "TDEE"
+      ],
+      "guidelines_referenced": [
+        "WHO BMI Classification",
+        "Indian RSSDI 2022 Guidelines",
+        "Mifflin-St Jeor Equation",
+        "SVS Pulse Grading",
+        "Rutherford Classification",
+        "ADA Diabetes Guidelines",
+        "ESC Cardiovascular Guidelines",
+        "International Tobacco Control Guidelines"
+      ]
+    }
+  },
+  "generation_timestamp": "2025-11-18T04:33:44.219657"
+}
