@@ -7,3 +7,4 @@ pydantic
 PyPDF2
 python-multipart
 aiohttp>=3.9.0
+reportlab
