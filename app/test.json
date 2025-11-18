@@ -1,0 +1,245 @@
+{
+  "patient_id": "69180bc7154982faf2e31233",
+  "patient_data": {
+    "success": true,
+    "data": {
+      "Registration": {
+        "FullName": "Sourav Chowdhury",
+        "Gender": "Male",
+        "DateOfBirth": "2000-12-20T00:00:00.000Z",
+        "Age": 25,
+        "PhoneNumber": "+8801712906519",
+        "Email": "rimelchowdhury01@gmail.com",
+        "Occupation": "Engineer",
+        "Address": "Dhaka, Bangladesh"
+      },
+      "Medical History": {
+        "DiabetesMellitus-Duration": 1,
+        "DiabetesMellitus-TreatmentStatus": "Not on Treatment",
+        "DiabetesMellitus-LastCheckUp": null,
+        "Hypertension-Duration": null,
+        "Hypertension-TreatmentStatus": "",
+        "Hypertension-LastCheckUp": "",
+        "Hypothyroid-Duration": null,
+        "Hypothyroid-TreatmentStatus": "",
+        "Hypothyroid-LastCheckUp": "",
+        "PreviousReport": [
+          "https://res.cloudinary.com/dsi00lpgf/image/authenticated/s--vggKkK8j--/v1763183562/patients/reports/PreviousReport-1763183552847-4zn1tbb.pdf"
+        ]
+      },
+      "Substance Use": {
+        "SmokingHistory-CurrentStatus": "Current Smoker",
+        "SmokingHistory-NumberPerDay": null,
+        "SmokingHistory-YearsSmoked": "2018-01-01T00:00:00.000Z"
+      },
+      "Diet & Activity": {
+        "DietPreference": "Vegetarian",
+        "FoodAllergies": "fish",
+        "MedicationAllergies": "",
+        "CurrentDietary": "",
+        "PhysicalActivityLevel": "Sendentary",
+        "SleepHoursPerNight": "7"
+      },
+      "Clinical Assessment": {
+        "Weight": "68",
+        "Height": "170",
+        "BMI": "23.5",
+        "BP": "120",
+        "HeartRate": "78",
+        "RBS": "110",
+        "lab-1": [
+          "https://res.cloudinary.com/dsi00lpgf/image/authenticated/s--UanYjPRZ--/v1763183563/patients/reports/lab-1-1763183556970-jzimwy4.pdf"
+        ],
+        "lab-2": [
+          "https://res.cloudinary.com/dsi00lpgf/image/authenticated/s--TzoGDfAM--/v1763183564/patients/reports/lab-2-1763183557984-s7umz7h.jpg"
+        ]
+      },
+      "_id": "69180bc7154982faf2e31233",
+      "status": "Pending",
+      "createdAt": "2025-11-15T05:12:39.139Z",
+      "updatedAt": "2025-11-15T05:12:39.139Z",
+      "__v": 0
+    }
+  },
+  "files_analyzed": [
+    {
+      "url": "https://res.cloudinary.com/dsi00lpgf/image/authenticated/s--vggKkK8j--/v1763183562/patients/reports/PreviousReport-1763183552847-4zn1tbb.pdf",
+      "field": "data.Medical History.PreviousReport[0]",
+      "type": "pdf"
+    },
+    {
+      "url": "https://res.cloudinary.com/dsi00lpgf/image/authenticated/s--UanYjPRZ--/v1763183563/patients/reports/lab-1-1763183556970-jzimwy4.pdf",
+      "field": "data.Clinical Assessment.lab-1[0]",
+      "type": "pdf"
+    },
+    {
+      "url": "https://res.cloudinary.com/dsi00lpgf/image/authenticated/s--TzoGDfAM--/v1763183564/patients/reports/lab-2-1763183557984-s7umz7h.jpg",
+      "field": "data.Clinical Assessment.lab-2[0]",
+      "type": "image"
+    }
+  ],
+  "medical_analysis": {
+    "patient_info": {
+      "gender": "Male",
+      "age": 25,
+      "occupation": "Engineer"
+    },
+    "examination_findings": {
+      "pulses": {
+        "femoral_pulse": {
+          "left_limb": "Normal",
+          "right_limb": "Normal"
+        },
+        "popliteal_pulse": {
+          "left_limb": "Normal",
+          "right_limb": "Normal"
+        },
+        "dorsalis_pedis_pulse": {
+          "left_limb": "Normal",
+          "right_limb": "Normal"
+        },
+        "posterior_tibial_pulse": {
+          "left_limb": "Normal",
+          "right_limb": "Normal"
+        },
+        "abi": {
+          "left_limb": 1,
+          "right_limb": 1
+        }
+      },
+      "vital_signs": {
+        "blood_pressure": "120/80 mmHg",
+        "heart_rate": 78,
+        "heart_rate_unit": "bpm",
+        "spo2": 98,
+        "spo2_unit": "%",
+        "temperature": 36.8,
+        "temperature_unit": "°C"
+      }
+    },
+    "risk_stratification": {
+      "components": [
+        {
+          "component": "DIABETES",
+          "risk_group": "MILD",
+          "rationale": "Recent diagnosis of diabetes mellitus, not on treatment."
+        },
+        {
+          "component": "TOBACCO USE",
+          "risk_group": "MODERATE",
+          "rationale": "Current smoker since 2018."
+        }
+      ]
+    },
+    "key_calculations": {
+      "bmi": 23.5,
+      "total_tobacco_risk": "Moderate",
+      "bmr_mifflin_st_jeor": {
+        "value": 1670,
+        "unit": "kcal/day"
+      },
+      "tdee_sedentary": {
+        "value": 2004,
+        "unit": "kcal/day"
+      },
+      "calorie_goal": {
+        "value": 1800,
+        "unit": "kcal/day",
+        "purpose": "for weight management"
+      }
+    },
+    "individualized_diet_plan": {
+      "target_calories": 1800,
+      "unit": "kcal/day",
+      "type": "Vegetarian",
+      "meals": [
+        {
+          "time": "Breakfast",
+          "foods": "Oatmeal with almonds and berries",
+          "calories": 400,
+          "protein": "15g",
+          "carbs": "60g",
+          "fat": "10g"
+        },
+        {
+          "time": "Lunch",
+          "foods": "Grilled tofu salad with mixed greens",
+          "calories": 500,
+          "protein": "20g",
+          "carbs": "50g",
+          "fat": "15g"
+        },
+        {
+          "time": "Dinner",
+          "foods": "Lentil soup with whole grain bread",
+          "calories": 600,
+          "protein": "25g",
+          "carbs": "70g",
+          "fat": "20g"
+        },
+        {
+          "time": "Snack",
+          "foods": "Fruit smoothie with spinach",
+          "calories": 300,
+          "protein": "10g",
+          "carbs": "50g",
+          "fat": "5g"
+        }
+      ],
+      "totals": {
+        "calories": 1800,
+        "protein": "70g",
+        "carbs": "230g",
+        "fat": "50g"
+      },
+      "notes": [
+        "Avoid fish due to allergy.",
+        "Increase water intake.",
+        "Consider vitamin B12 supplementation."
+      ]
+    },
+    "exercise_physiotherapy_plan": {
+      "recommended_program": [
+        {
+          "activity": "Walking",
+          "description": "Brisk walking for 30 minutes daily, 5 days a week."
+        },
+        {
+          "activity": "Yoga",
+          "description": "30-minute yoga session focusing on flexibility and breathing exercises, 3 times a week."
+        }
+      ]
+    },
+    "management_advice_triggers": {
+      "condition_name": {
+        "status": "Diabetes Mellitus",
+        "action": "Start lifestyle modifications and consider pharmacotherapy if glucose levels remain high."
+      },
+      "additional_advice": "Regular monitoring of blood glucose levels and periodic HbA1c tests."
+    },
+    "red_flags_emergency_return": {
+      "seek_immediate_medical_attention_if": [
+        "Severe chest pain",
+        "Sudden shortness of breath",
+        "Unexplained weight loss"
+      ]
+    },
+    "follow_up_plan": {
+      "specialty_clinic": "Endocrinology Clinic, every 6 months",
+      "investigations": "HbA1c, Lipid Profile, Liver Function Tests",
+      "medication_review": "Every 3 months or as needed",
+      "lifestyle_modifications": "Increase physical activity, smoking cessation"
+    },
+    "integrated_report_summary": {
+      "main_problems": "Diabetes Mellitus, Tobacco Use",
+      "critical_findings": null,
+      "care_plan_summary": [
+        "Implement dietary changes to manage diabetes.",
+        "Encourage smoking cessation.",
+        "Regular follow-up with endocrinologist."
+      ],
+      "advisor": "AI Medical Assistant"
+    }
+  },
+  "generation_timestamp": "2025-11-15T12:31:55.001246"
+}

@@ -934,17 +934,17 @@ Return ONLY valid JSON."""
         report = {
             "patient_id": user_id,
             "medical_analysis": analysis,
-            "files_analyzed": [
-                {
-                    "field": f['field'], 
-                    "url": f['url'], 
-                    "type": f['type'],
-                    "status": "processed" if f.get('path') else "error"
-                } for f in files
-            ],
+            # "files_analyzed": [
+            #     {
+            #         "field": f['field'], 
+            #         "url": f['url'], 
+            #         "type": f['type'],
+            #         "status": "processed" if f.get('path') else "error"
+            #     } for f in files
+            # ],
             "generation_timestamp": datetime.now().isoformat(),
-            "report_type": "comprehensive_medical_analysis",
-            "analysis_method": "hybrid_dynamic_structure"
+            # "report_type": "comprehensive_medical_analysis",
+            # "analysis_method": "hybrid_dynamic_structure"
         }
         
         return report
