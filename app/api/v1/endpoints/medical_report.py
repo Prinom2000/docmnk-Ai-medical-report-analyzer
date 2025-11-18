@@ -7,10 +7,10 @@ import tempfile
 router = APIRouter()
 
 @router.post("/generate-report")
-def generate_report(request: ReportRequest):
+async def generate_report(request: ReportRequest):
     try:
         service = MedicalReportService()
-        report = service.generate_report(request.user_id)
+        report = await service.generate_report(request.user_id)
         return report
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
