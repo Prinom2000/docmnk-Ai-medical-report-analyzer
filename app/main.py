@@ -11,13 +11,12 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
-    allow_origins=["https://docmnk.netlify.app"],
-    allow_origins=["http://localhost:5174"],
+    allow_origins=["*", "http://localhost:5173", "https://docmnk.netlify.app", "http://localhost:5174"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 app.include_router(medical_report.router, prefix="/api/v1", tags=["Medical Report"])
 
