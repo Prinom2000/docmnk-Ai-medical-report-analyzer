@@ -6,9 +6,15 @@ from pathlib import Path
 from typing import Dict, Any, List, Optional
 from datetime import datetime
 import asyncio
+import io
 
 import aiohttp
 from openai import AsyncOpenAI
+from reportlab.lib.pagesizes import A4
+from reportlab.lib import colors
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer, PageBreak
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.units import mm
 from app.config import settings
 
 try:
@@ -915,36 +921,171 @@ Return ONLY valid JSON."""
         return json.loads(resp2.choices[0].message.content)
 
     async def generate_report(self, user_id: str) -> Dict[str, Any]:
-        """Generate comprehensive report with mandatory core sections and dynamic lab sections."""
+        """Generate comprehensive report with mandatory core sections and dynamic lab sections.
+
+        This method generates the report and saves it to the remote API in the background.
+        Then converts to PDF and uploads to database.
+        """
         patient = await self.fetch_patient_data(user_id)
         urls = self.extract_cloudinary_urls(patient)
-        files = []
-        
+        files: List[Dict[str, Any]] = []
+
         for i, u in enumerate(urls):
-            filename = f"{u['field'].replace('.', '_')}_{i}.{u['type']}"
+            filename = f"{u['field'].replace('.', '_')}_{i}.{u.get('type','bin')}"
             try:
                 path = await self.download_file(u['url'], filename)
                 files.append({**u, "path": path})
             except Exception as e:
-                print(f"Error downloading file {u['url']}: {e}")
+                print(f"Error downloading file {u.get('url')}: {e}")
                 files.append({**u, "path": None, "error": str(e)})
-        
+
         analysis = await self.analyze_with_openai(patient, files)
-        
-        report = {
+
+        report: Dict[str, Any] = {
             "patient_id": user_id,
             "medical_analysis": analysis,
-            # "files_analyzed": [
-            #     {
-            #         "field": f['field'], 
-            #         "url": f['url'], 
-            #         "type": f['type'],
-            #         "status": "processed" if f.get('path') else "error"
-            #     } for f in files
-            # ],
             "generation_timestamp": datetime.now().isoformat(),
-            # "report_type": "comprehensive_medical_analysis",
-            # "analysis_method": "hybrid_dynamic_structure"
         }
+
+        # save the report to remote API in background (fire and forget)
+        asyncio.create_task(self.save_report(report))
         
+        # convert to PDF and upload to database in background
+        asyncio.create_task(self.upload_report_to_db(user_id, report))
+
         return report
+
+    async def save_report(self, report: Dict[str, Any]) -> Dict[str, Any]:
+        """Save the generated report JSON to remote API and return the API response.
+
+        Posts to: {BASE_URL}/patient-registration/save-report
+        """
+        url = f"{self.base_url}/patient-registration/save-report"
+        try:
+            async with aiohttp.ClientSession() as session:
+                async with session.post(url, json=report, timeout=aiohttp.ClientTimeout(total=30)) as resp:
+                    # try to parse json response
+                    try:
+                        data = await resp.json()
+                    except Exception:
+                        text = await resp.text()
+                        data = {"status": resp.status, "text": text}
+                    # print confirmation when saved successfully (HTTP 2xx)
+                    if isinstance(resp.status, int) and 200 <= resp.status < 300:
+                        print("saved the report to DB")
+                    return {"status": resp.status, "response": data}
+        except Exception as e:
+            return {"status": "error", "error": str(e)}
+
+    def _wrap_text(self, text):
+        """Convert plain text or dict/list into safe wrapped string for PDF."""
+        if isinstance(text, (dict, list)):
+            text = json.dumps(text, indent=2, ensure_ascii=False)
+        return Paragraph(str(text), getSampleStyleSheet()['BodyText'])
+
+    def _section_to_table(self, section_dict):
+        """Convert sub-JSON (dict) into a PDF table with wrapping."""
+        table_data = [["Key", "Value"]]
+
+        for k, v in section_dict.items():
+            table_data.append([self._wrap_text(k), self._wrap_text(v)])
+
+        table = Table(
+            table_data,
+            colWidths=[60*mm, 100*mm]
+        )
+
+        table.setStyle(TableStyle([
+            ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
+            ('GRID', (0, 0), (-1, -1), 0.5, colors.black),
+            ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+        ]))
+        
+        return table
+
+    def json_to_pdf_bytes(self, data: Dict[str, Any]) -> bytes:
+        """Convert medical report JSON to PDF bytes (in-memory)."""
+        pdf_buffer = io.BytesIO()
+        
+        doc = SimpleDocTemplate(
+            pdf_buffer,
+            pagesize=A4,
+            leftMargin=18*mm,
+            rightMargin=18*mm,
+            topMargin=18*mm,
+            bottomMargin=18*mm
+        )
+        
+        styles = getSampleStyleSheet()
+        story = []
+
+        # ---- PATIENT ID ----
+        if "patient_id" in data:
+            story.append(Paragraph("<b>PATIENT ID</b>", styles["Heading3"]))
+            story.append(Paragraph(str(data["patient_id"]), styles["BodyText"]))
+            story.append(Spacer(1, 12))
+
+        # ---- GENERATION TIMESTAMP ----
+        if "generation_timestamp" in data:
+            story.append(Paragraph("<b>REPORT GENERATED</b>", styles["Heading3"]))
+            story.append(Paragraph(str(data["generation_timestamp"]), styles["BodyText"]))
+            story.append(Spacer(1, 12))
+
+        # ---- MEDICAL ANALYSIS ----
+        medical = data.get("medical_analysis", {})
+
+        story.append(Paragraph("<b>MEDICAL ANALYSIS</b>", styles["Heading2"]))
+        story.append(Spacer(1, 12))
+
+        # Loop through each subsection
+        for section_name, section_value in medical.items():
+
+            if isinstance(section_value, dict):
+                # Section header
+                story.append(Paragraph(f"<b>{section_name.replace('_',' ').title()}</b>", styles["Heading3"]))
+                story.append(Spacer(1, 6))
+
+                # Add table for this section
+                story.append(self._section_to_table(section_value))
+                story.append(Spacer(1, 14))
+
+            else:
+                # If not dict, still print nicely
+                story.append(Paragraph(f"<b>{section_name}</b>", styles["Heading3"]))
+                story.append(self._wrap_text(section_value))
+                story.append(Spacer(1, 14))
+
+        doc.build(story)
+        pdf_buffer.seek(0)
+        return pdf_buffer.getvalue()
+
+    async def upload_report_to_db(self, user_id: str, report: Dict[str, Any]) -> Dict[str, Any]:
+        """Convert report to PDF and upload with patientId to remote database.
+
+        Posts to: {BASE_URL}/reports/upload
+        Form data: patientId, reports (PDF file)
+        """
+        url = f"{self.base_url}/reports/upload"
+        try:
+            # Convert JSON report to PDF bytes
+            pdf_bytes = self.json_to_pdf_bytes(report)
+            
+            # Prepare multipart form data
+            data = aiohttp.FormData()
+            data.add_field('patientId', user_id)
+            data.add_field('reports', io.BytesIO(pdf_bytes), filename=f"report_{user_id}.pdf", content_type='application/pdf')
+            
+            async with aiohttp.ClientSession() as session:
+                async with session.post(url, data=data, timeout=aiohttp.ClientTimeout(total=60)) as resp:
+                    try:
+                        response_data = await resp.json()
+                    except Exception:
+                        response_data = {"status": resp.status, "text": await resp.text()}
+                    
+                    if isinstance(resp.status, int) and 200 <= resp.status < 300:
+                        print("report uploaded to db")
+                    
+                    return {"status": resp.status, "response": response_data}
+        except Exception as e:
+            print(f"Error uploading report: {e}")
+            return {"status": "error", "error": str(e)}
