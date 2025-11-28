@@ -1,4 +1,5 @@
 # Medical Report Service
+## LIVE👉 https://ai.medixcamp.com/docs
 
 An AI-powered medical report generation system that analyzes patient data and medical documents (PDFs, images) to create comprehensive, structured clinical reports using OpenAI's GPT-4o model.
 
@@ -189,6 +190,9 @@ The service includes robust error handling:
 - PDF extraction errors (graceful fallback)
 - OCR failures (continues with placeholder text)
 - Missing dependencies (optional features disabled)
+
+## Deployment
+- **AWS(EC2)**
 
 ## Performance Considerations
 
